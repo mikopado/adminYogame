@@ -1,0 +1,4 @@
+{
+    "environment": "PROD",
+    "apiUrl": "https://xjc9zrana2.execute-api.eu-west-1.amazonaws.com/Prod"
+}

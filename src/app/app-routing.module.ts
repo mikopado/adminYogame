@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ClassesComponent } from './classes/classes.component';
-import { MemberComponent } from './member/member.component';
 import { MembershipsComponent } from './memberships/memberships/memberships.component';
+import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [
   {
-    path: 'member',
-    component: MemberComponent,
+    path: 'users',
+    component: UserComponent,
     data: {
-      title: 'Members',
+      title: 'Users',
       icon: 'class',
       isStatic: true,
       isLogout: false
@@ -36,6 +36,8 @@ const routes: Routes = [
       isLogout: false
     }  
   },
+  { path: '', pathMatch: 'full', redirectTo: 'users' },
+  { path: '**', component: UserComponent }
 ];
 
 @NgModule({

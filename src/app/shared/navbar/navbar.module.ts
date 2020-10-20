@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar.component';
 import { MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
-import { MenuService } from './menu.service';
+import { MenuService } from '../menu.service';
 import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({

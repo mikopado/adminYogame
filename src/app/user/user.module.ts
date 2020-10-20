@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-import { MemberComponent } from './member.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
+import { UserComponent } from './user.component';
 
 @NgModule({
   declarations: [
-    MemberComponent
+    UserComponent
   ],
   imports: [
       CommonModule,
@@ -17,4 +16,4 @@ import {MatTableModule} from '@angular/material/table';
       MatTableModule
   ]
 })
-export class MemberModule { }
+export class UserModule { }
