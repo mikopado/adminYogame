@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { MenuService } from '../menu.service';
+import { MenuService } from '../services/menu.service';
+import { AuthenticationService } from '../authenticationService';
 
 
 @Component({
@@ -18,7 +19,9 @@ export class NavbarComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private menuService: MenuService) {
+  constructor(private breakpointObserver: BreakpointObserver, 
+    private menuService: MenuService, 
+    public readonly authService: AuthenticationService) {
   }  
   ngOnInit(): void {
     this.menuItems = this.menuService.getMenuItems();

@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { IClass, IApiResponse, IUser, IMemberMembership } from './interfaces';
+import { IClass, IApiResponse, IUserMember, IMemberMembership } from '../interfaces';
 import { throwError } from 'rxjs';
-import { AppConfigService } from '../app-config.service';
+import { AppConfigService } from '../../app-config.service';
 
 
 @Injectable({
@@ -28,9 +28,9 @@ export class DataService {
             .pipe(catchError(this.handleError));
     }
 
-    getUsers(): Observable<IApiResponse<IUser[]>> {
-        var endpoint = '/api/user/list';
-        return this.http.get<IApiResponse<IUser[]>>(this.configService.settings.apiUrl + endpoint)
+    getUsers(): Observable<IApiResponse<IUserMember[]>> {
+        var endpoint = '/api/members';
+        return this.http.get<IApiResponse<IUserMember[]>>(this.configService.settings.apiUrl + endpoint)
             .pipe(catchError(this.handleError));
     }
 

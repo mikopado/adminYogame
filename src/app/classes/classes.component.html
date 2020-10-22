@@ -1,26 +1,43 @@
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+<div  class="centered"><h3>Booked Classes</h3></div>
+<mat-table [dataSource]="(apiService.bookedClasses$ | async)" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
     </ng-container>
   
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    <ng-container matColumnDef="userId">
+      <mat-header-cell *matHeaderCellDef> UserId </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.userId}} </mat-cell>
     </ng-container>
   
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+    <ng-container matColumnDef="class">
+      <mat-header-cell *matHeaderCellDef> Class </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.class}} </mat-cell>
     </ng-container>
   
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+    <ng-container matColumnDef="teacher">
+      <mat-header-cell *matHeaderCellDef> Teacher </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.teacher}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="timeslot">
+      <mat-header-cell *matHeaderCellDef> Hours </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.timeslot}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="room">
+      <mat-header-cell *matHeaderCellDef> Room </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.room}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="bookedAt">
+      <mat-header-cell *matHeaderCellDef> Booking time </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.bookedAt}} </mat-cell>
     </ng-container>
   
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
